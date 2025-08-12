@@ -1,10 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
     private const string _persistentSceneName = "PersistentScene";
+    [SerializeField]
     private string _currentSceneName;
     public bool IsPaused { get; private set; }
     private bool _isLoading = false;
@@ -12,9 +14,8 @@ public class GameManager : Singleton<GameManager>
     protected override void Awake()
     {
         base.Awake();
-        DontDestroyOnLoad(gameObject);
 
-        _currentSceneName = SceneManager.GetActiveScene().name;
+        Assert.IsNotNull(_currentSceneName, "Current Scene Name is not assigned.");
     }
 
     void Start()
