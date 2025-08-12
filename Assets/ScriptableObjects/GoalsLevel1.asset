@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ef1de90b1a20542837f0f4895fc6bb, type: 3}
+  m_Name: GoalsLevel1
+  m_EditorClassIdentifier: 
+  _title: 'Objectif:'
+  _goalDatas:
+  - _text: Ne pas faire d'accident
+    _isCompleted: 0
+  - _text: Ne pas bruler le feu
+    _isCompleted: 0
+  - _text: Atteindre l'objectif
+    _isCompleted: 0

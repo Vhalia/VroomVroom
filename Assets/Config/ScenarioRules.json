@@ -1,0 +1,10 @@
+[
+  {
+      "id": "RED_LIGHT_VIOLATION",
+      "title": "Attention! Vous avez franchi un feu rouge.",
+      "description": "Vous devez toujours vous arrêter au feu rouge pour permettre aux autres usagers de la route de circuler en toute sécurité.",
+      "type": "ERROR",
+      "pauseGame": true,
+      "displayDuration": 3.0
+  }
+]
