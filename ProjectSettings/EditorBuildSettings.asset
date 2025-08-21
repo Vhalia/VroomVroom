@@ -8,9 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scenario1Scene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/PersistentScene.unity
     guid: 2b9bb2660fb4be940906eec56ecf13cc
+  - enabled: 1
+    path: Assets/Scenes/FlashCardScene.unity
+    guid: 5dc1e2f8add188742a26dfb46b9bc851
+  - enabled: 1
+    path: Assets/Scenes/ChapterSelection.unity
+    guid: bfda2d2e2cefb0b4b987c87d5a5a489f
+  - enabled: 1
+    path: Assets/Scenes/MainMenuScene.unity
+    guid: 6a6db7c150cfa38488fdfec42bc244bb
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 0b775c1eda7907c4dbdff073657adbec, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

@@ -8,7 +8,16 @@ namespace Assets.Scripts
     {
         RED_LIGHT_VIOLATION,
         GOAL_REACHED,
-        GOAL_COMPLETED
+        GOAL_COMPLETED,
+        EXPERIENCE_GAINED
+    }
+
+    public class EventData
+    {
+        private Dictionary<string, object> _data = new Dictionary<string, object>();
+
+        public void Set<T>(string key, T value) => _data[key] = value;
+        public T Get<T>(string key) => (T)_data[key];
     }
 
     public class EventBus : Singleton<EventBus>
@@ -40,6 +49,12 @@ namespace Assets.Scripts
                 Instance._events[eventType] -= listener;
         }
 
+        public static void Unsubscribe<T>(EEventType eventType, Action<T> listener)
+        {
+            if (Instance._eventsWithParams.ContainsKey(eventType))
+                Instance._eventsWithParams[eventType] -= (obj) => listener((T)obj);
+        }
+
         public static void TriggerEvent(EEventType eventType)
         {
             if (!Instance._events.ContainsKey(eventType))
@@ -47,7 +62,7 @@ namespace Assets.Scripts
                 Debug.LogWarning($"Event {eventType} has no subscribers.");
                 return;
             }
-                
+
             Instance._events[eventType]?.Invoke();
         }
 

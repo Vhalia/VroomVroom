@@ -39,12 +39,6 @@ namespace Assets.Scripts.ScriptableObjects
             return (float)_currentExperience / CurrentLevelThreshold;
         }
 
-        public void ResetProgress()
-        {
-            _currentLevel = 1;
-            _currentExperience = 0;
-        }
-
         [ContextMenu("Add Test Experience")]
         private void AddTestExperience()
         {
@@ -54,7 +48,8 @@ namespace Assets.Scripts.ScriptableObjects
         [ContextMenu("Reset Player Progress")]
         private void ResetPlayerProgress()
         {
-            ResetProgress();
+            _currentLevel = 1;
+            _currentExperience = 0;
         }
     }
 }

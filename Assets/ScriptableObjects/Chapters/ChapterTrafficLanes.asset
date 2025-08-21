@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fde3177eaa3a454f8f03a69005eaf61, type: 3}
+  m_Name: ChapterTrafficLanes
+  m_EditorClassIdentifier: 
+  ChapterId: 2
+  Title: Bandes de circulation
+  IsUnlocked: 0
+  IsCompleted: 0
+  IsRoot: 0
+  ConnectedChapterIds: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  Questions:
+  - title: Bande de circulation ex
+    questionText: 'Bande de circulation ex
+
+
+      Rep: C'
+    answerA: Bande de circulation ex
+    answerB: Bande de circulation ex
+    answerC: Bande de circulation ex
+    answerD: Bande de circulation ex
+    correctAnswer: 2
+    explanation: Bande de circulation ex

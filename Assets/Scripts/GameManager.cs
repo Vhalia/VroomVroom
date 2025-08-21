@@ -1,21 +1,35 @@
+using System;
 using System.Collections;
+using Assets.Scripts;
+using Assets.Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    private const string _persistentSceneName = "PersistentScene";
     [SerializeField]
     private string _currentSceneName;
+    [SerializeField]
+    private ChapterData _currentChapter;
+    [SerializeField]
+    private PlayerData _playerData;
+
     public bool IsPaused { get; private set; }
+
     private bool _isLoading = false;
+    private const string _persistentSceneName = "PersistentScene";
+    private const string _chapterSceneName = "FlashCardScene";
+    private const string _mainMenuSceneName = "MainMenuScene";
 
     protected override void Awake()
     {
         base.Awake();
 
         Assert.IsNotNull(_currentSceneName, "Current Scene Name is not assigned.");
+        EventBus.Subscribe<ExperienceGainedEventData>(
+            EEventType.EXPERIENCE_GAINED,
+            OnExperienceGained);
     }
 
     void Start()
@@ -60,6 +74,30 @@ public class GameManager : Singleton<GameManager>
         LoadScene(_currentSceneName);
     }
 
+    public void LoadChapterScene(ChapterData chapter)
+    {
+        if (chapter == null)
+            Assert.IsNotNull(chapter, "Chapter data cannot be null.");
+
+        _currentChapter = chapter;
+        LoadScene(_chapterSceneName);
+    }
+
+    public void LoadMainMenu()
+    {
+        LoadScene(_mainMenuSceneName);
+    }
+
+    public ChapterData GetCurrentChapter()
+    {
+        return _currentChapter;
+    }
+
+    public PlayerData GetPlayerData()
+    {
+        return _playerData;
+    }
+
     private IEnumerator LoadGameplaySceneCoroutine(string sceneName)
     {
         _isLoading = true;
@@ -80,5 +118,10 @@ public class GameManager : Singleton<GameManager>
 
         _isLoading = false;
         Continue();
+    }
+
+    private void OnExperienceGained(ExperienceGainedEventData eventData)
+    {
+        _playerData.AddExperience(eventData.ExperienceGained);
     }
 }

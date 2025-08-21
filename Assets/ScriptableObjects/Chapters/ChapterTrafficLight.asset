@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fde3177eaa3a454f8f03a69005eaf61, type: 3}
+  m_Name: ChapterTrafficLight
+  m_EditorClassIdentifier: 
+  ChapterId: 3
+  Title: Les feux de signalisation
+  IsUnlocked: 1
+  IsCompleted: 0
+  IsRoot: 1
+  ConnectedChapterIds: 0100000002000000
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Icon: {fileID: 0}
+  Questions:
+  - title: Feux orange
+    questionText: Pouvez vous passer lorsque le feux est orange continu ?
+    answerA: Non, jamais
+    answerB: Oui, je peux m'engager sans souci
+    answerC: "Non, le feu doit clignot\xE9"
+    answerD: "Non, sauf si je ne pouvais pas m'arr\xEAter en s\xE9curit\xE9"
+    correctAnswer: 3
+    explanation: "Un feu orange continu survient juste avant que le feu passe au
+      rouge et permet aux usagers qui n'ont pas la possibilit\xE9 de s'arr\xEAter
+      \xE0 temps pour garantir la s\xE9curit\xE9 de tout le monde"
+  - title: Feux orange 2
+    questionText: Pouvez vous passer lorsque le feux est orange continu ? 2
+    answerA: "Non, sauf si je ne pouvais pas m'arr\xEAter en s\xE9curit\xE9"
+    answerB: Oui, je peux m'engager sans souci
+    answerC: "Non, le feu doit clignot\xE9"
+    answerD: Non, jamais
+    correctAnswer: 0
+    explanation: "Un feu orange continu survient juste avant que le feu passe au
+      rouge et permet aux usagers qui n'ont pas la possibilit\xE9 de s'arr\xEAter
+      \xE0 temps pour garantir la s\xE9curit\xE9 de tout le monde"
